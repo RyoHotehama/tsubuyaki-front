@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Box, Container, Typography } from '@mui/material';
-import { RegistForm } from '@/components/registForm';
+import { RegistForm } from '@/components/RegistForm';
 
 export default function Register() {
   return (

@@ -14,7 +14,7 @@ export default function RegistCommit() {
           本登録完了
         </Typography>
         <Box marginTop={5} textAlign={'center'}>
-          <Typography variant="h6">つぶやきくんの本登録が完了しました。</Typography>
+          <Typography variant="h6">つぶやきくんの登録が完了しました。</Typography>
           <Typography variant="h6">つぶやきくんをお楽しみください。</Typography>
         </Box>
         <Box marginTop={5} textAlign={'center'} color={'#1a0dab'}>
