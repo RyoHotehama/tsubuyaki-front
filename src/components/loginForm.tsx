@@ -22,7 +22,6 @@ export const LoginForm = () => {
 
       router.push('/');
     } catch (e: any) {
-      console.log(e);
       const code = e.code;
       if (code === 400) {
         setError('error', {
