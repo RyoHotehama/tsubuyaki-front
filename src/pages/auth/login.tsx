@@ -1,20 +1,20 @@
 import Head from 'next/head';
 import { Box, Container, Typography } from '@mui/material';
-import { RegistForm } from '@/components/RegistForm';
+import { LoginForm } from '@/components/loginForm';
 
 export default function Register() {
   return (
     <>
       <Head>
-        <title>つぶやきくん会員登録</title>
-        <meta name="description" content="つぶやきくん会員登録" />
+        <title>つぶやきくんログイン</title>
+        <meta name="description" content="つぶやきくんログイン" />
       </Head>
       <Container maxWidth="xs">
         <Box marginTop={5}>
           <Typography variant="h5" textAlign={'center'} marginBottom={3}>
-            つぶやきくん会員登録
+            つぶやきくんログイン
           </Typography>
-          <RegistForm />
+          <LoginForm />
         </Box>
       </Container>
     </>
