@@ -1,21 +1,18 @@
 import { OmikujiList } from '@/components/OmikujiList';
 import { OmikujiResult } from '@/components/OmikujiResult';
-import { drawOmikuji } from '@/hooks/OmikujiHook';
+import { handleClick } from '@/hooks/OmikujiHook';
 import { OmikujiResultType } from '@/types/OmikujiType';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
+import useSound from 'use-sound';
+import loading from '../../public/music/loading.mp3';
 
 export default function Shuffle() {
   const [omikujiResult, setOmikujiResult] = useState<OmikujiResultType>({ image: '', name: '' });
-
-  // おみくじを引くを押下した際の処理
-  const handleClick = () => {
-    const result = drawOmikuji();
-
-    setOmikujiResult(result);
-  };
+  const [disabled, setDisabled] = useState<boolean>(false);
+  const [play] = useSound(loading, { volume: 0.3 });
   return (
     <>
       <Head>
@@ -41,7 +38,7 @@ export default function Shuffle() {
                 </Box>
               </Box>
               <Box>
-                <Button variant="contained" size="large" onClick={handleClick}>
+                <Button disabled={disabled} variant="contained" size="large" onClick={() => handleClick(setOmikujiResult, play, setDisabled)}>
                   おみくじを引く
                 </Button>
               </Box>
